@@ -25,11 +25,11 @@ export const Home = () => {
 	return (
 		<div className="row mainContainer">
 
-			<div className="col-2 fancyGrey"
+			<div className="col-2 bg-secondary"
 				style={menuStatus ? { display: "block" } : { display: "none" }}
 			>
 
-				<Fade bottom duration={1500}>
+				<Fade left duration={1111}>
 					<div className=" fancyGrey">
 						<div className="text-white ps-4 py-3 menuItem"><i class="fa-solid fa-qrcode"></i>
 							<span className="ps-2">Project Showcase</span></div>
