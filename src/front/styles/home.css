@@ -5,3 +5,46 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+
+.mainContainer {
+    min-height: 669px;
+}
+
+.fancyGrey {
+    background-color: rgb(33, 33, 33);
+}
+
+.menuItem {
+    color: white;
+    width: 300px;
+    overflow: hidden;
+}
+
+.menuItem:hover {
+    color: white;
+    cursor: pointer;
+    background-color: black;
+}
+
+.navItem {
+    color: rgb(219, 219, 219);
+}
+
+.navItem:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+.fadeOut{
+    opacity:0;
+    width:0;
+    height:0;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+.fadeIn{
+    opacity:1;
+    transition-duration:5s;
+
+}
