@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import { AppContext } from "../layout";
+import { useSpring } from "react-spring";
 
 export const Navbar = () => {
 	const { menuStatus, setMenuStatus, flip, setFlip } = useContext(AppContext)
@@ -19,6 +20,16 @@ export const Navbar = () => {
 
 	}
 
+	const chooseEffect = () => {
+		if (menuStatus == "animate__zoomIn") {
+			setMenuStatus("animate__zoomOut")
+		}
+		if (menuStatus == "animate__zoomOut") {
+			setMenuStatus("animate__zoomIn")
+		}
+
+	}
+
 
 
 	return (
@@ -26,9 +37,8 @@ export const Navbar = () => {
 			<div className="row d-flex justify-content-start ps-4">
 				<div className="col-1 navItem"
 					onClick={() => {
-						setMenuStatus(!menuStatus);
-						setFlip(!flip)
-						runFade();
+						chooseEffect();
+						setFlip(!flip);
 					}}
 				>
 					<i class="fa-solid fa-bars fs-3"></i>
