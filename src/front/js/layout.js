@@ -22,6 +22,8 @@ const Layout = () => {
 
     const [menuStatus, setMenuStatus] = useState("animate__zoomOut")
 
+    const [menuVisible, setMenuVisible] = useState(false)
+
     const [flip, setFlip] = useState(false)
 
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
@@ -29,7 +31,7 @@ const Layout = () => {
     return (
         <div>
             <AppContext.Provider value={
-                { menuStatus, setMenuStatus, flip, setFlip }
+                { menuStatus, setMenuStatus, flip, setFlip, menuVisible, setMenuVisible }
             }>
                 <BrowserRouter basename={basename}>
                     <ScrollToTop>

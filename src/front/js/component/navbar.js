@@ -6,7 +6,7 @@ import { AppContext } from "../layout";
 import { useSpring } from "react-spring";
 
 export const Navbar = () => {
-	const { menuStatus, setMenuStatus, flip, setFlip } = useContext(AppContext)
+	const { menuStatus, setMenuStatus, flip, setFlip, menuVisible, setMenuVisible } = useContext(AppContext)
 
 	const runFade = () => {
 		const props = useSpring({
@@ -30,6 +30,13 @@ export const Navbar = () => {
 
 	}
 
+	// const chooseVisible = () => {
+	// 	if (menuVisible == "hidden") {
+	// 		setMenuVisible("display")
+	// 	}
+
+	// }
+
 
 
 	return (
@@ -38,6 +45,7 @@ export const Navbar = () => {
 				<div className="col-1 navItem"
 					onClick={() => {
 						chooseEffect();
+						setMenuVisible(true);
 						setFlip(!flip);
 					}}
 				>

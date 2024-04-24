@@ -14,7 +14,7 @@ import 'animate.css';
 export const Home = () => {
 	// const { store, actions } = useContext(Context);
 
-	const { menuStatus, setMenuStatus, flip, setFlip } = useContext(AppContext)
+	const { menuStatus, setMenuStatus, flip, setFlip, menuVisible, setMenuVisible } = useContext(AppContext)
 
 	const props = useSpring({
 		to: { opacity: 1 },
@@ -41,8 +41,19 @@ export const Home = () => {
 
 	return (
 		<div className="row mainContainer">
+			<div className=" col-3 bg-secondary bg1"
+				style={(flip == false) && (menuVisible == false) ? { display: "block", } : { display: "none" }}
+			>
+				<Zoom>
+					<div className="text-white ps-2 fs-2 inPlace"
+						style={flip ? { display: "none" } : { display: "block" }}
+					>
+						<i class="fa-solid fa-brain pe-1"></i>Limbic Portal
+					</div>
+				</Zoom>
+			</div>
 			<div className="col-3 bg-secondary bg1"
-				style={flip ? { display: "block" } : { display: "none" }}
+				style={flip && menuVisible ? { display: "block" } : { display: "none" }}
 			>
 				<div className={`ps-4 py-3 fancyGrey animate__animated ${menuStatus}
 				${mainDiv == "home" ? "menuItemActive" : "menuItem"}  `}
@@ -94,8 +105,16 @@ export const Home = () => {
 			</div>
 
 			<div className=" col-3 bg-secondary bg1"
-				style={flip ? { display: "none", } : { display: "block" }}
+				style={flip == false && menuVisible ? { display: "block", } : { display: "none" }}
 			>
+				<Zoom>
+					<div className="text-white ps-2 fs-2 inPlace"
+						style={flip ? { display: "none" } : { display: "block" }}
+					>
+						<i class="fa-solid fa-brain pe-1"></i>Limbic Portal
+					</div>
+				</Zoom>
+
 				<div className={`text-white ps-4 py-3 menuItemInactive fancyGrey animate__animated ${menuStatus} `}
 					onClick={() => { setMainDiv("home") }}
 				>
@@ -126,7 +145,6 @@ export const Home = () => {
 					<span className="menuItemInactive px-3 py-2 ms-3"><i class="fa-solid fa-x"></i></span>
 					<span className="menuItemInactive px-3 py-2 ms-4"><i class="fa-brands fa-linkedin"></i></span>
 				</div>
-
 			</div>
 
 			{ /* Main Div conditionally renders below  */}
@@ -140,14 +158,14 @@ export const Home = () => {
 
 					<div className="col"
 						style={mainDiv == "home" ? { display: "block" } : { display: "none" }}>
-						<div className={`text-white fs-1 animate__animated ${effect} mt-4 ms-5`}
-						>
-							Welcome Home!
-						</div>
+						<span className="myButton" style={{ display: "block" }}
+							onClick={() => chooseEffect()}
+						>If you think you can</span>
+						<img src="https://cdn.pixabay.com/photo/2017/03/15/17/22/brain-2146817_1280.png"
+							className="mainBrain"
+						/>
 						<div className="mt-3 fs-5 ms-5">
-							<span className="myButton"
-								onClick={() => chooseEffect()}
-							>In/out!</span>
+
 						</div>
 					</div>
 
@@ -227,6 +245,6 @@ export const Home = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 };
