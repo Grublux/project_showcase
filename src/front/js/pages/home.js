@@ -165,7 +165,7 @@ export const Home = () => {
 							className="mainBrain"
 						/>
 						<div className="mt-3 fs-5 ms-5">
-
+							<i class="fa-solid fa-arrow-right fa-shake fs-1"></i>
 						</div>
 					</div>
 
