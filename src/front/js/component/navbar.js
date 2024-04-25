@@ -40,18 +40,18 @@ export const Navbar = () => {
 
 
 	return (
-		<nav className="navbar navbar-light fancyGrey">
-			<div className="row d-flex justify-content-start ps-4">
-				<div className="col-1 navItem"
-					onClick={() => {
-						chooseEffect();
-						setMenuVisible(true);
-						setFlip(!flip);
-					}}
-				>
-					<i class="fa-solid fa-bars fs-3"></i>
-				</div>
+		<div className="fancyGrey myNavbar">
+
+			<div className="col-1 navItem"
+				onClick={() => {
+					chooseEffect();
+					setMenuVisible(true);
+					setFlip(!flip);
+				}}
+			>
+				<i class="fa-solid fa-bars fs-3"></i>
 			</div>
-		</nav>
+
+		</div>
 	);
 };

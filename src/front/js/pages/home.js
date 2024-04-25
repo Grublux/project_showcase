@@ -26,6 +26,12 @@ export const Home = () => {
 
 	const [effect, setEffect] = useState("animate__zoomIn")
 
+	const [arrow, setArrow] = useState("fa-beat-fade")
+
+	const [firstAnimation, setFirstAnimation] = useState("")
+
+	const [visible, setVisible] = useState("none")
+
 	const chooseEffect = () => {
 		if (effect == "animate__zoomIn") {
 			setEffect("animate__zoomOut")
@@ -38,9 +44,54 @@ export const Home = () => {
 
 	const [mainDiv, setMainDiv] = useState("home")
 
+	// Animation functions below 
+
+	function getPositionXY() {
+		let element = document.getElementById("mainBrain");
+		let rect = element.getBoundingClientRect();
+		document.getElementById('mainBrain').innerHTML =
+			'X: ' + rect.x + ', ' + 'Y: ' + rect.y
+		console.log("here are the coordinates of mainBrain", rect)
+		console.log("here is just the X coord:", rect.x)
+	}
+
+	var id = setInterval(frame, 5);
+
+	var test = ("")
+
+	function frame() {
+		if (test) {
+			clearInterval(id);
+		}
+
+		else {
+			/* code to change the element style */
+		}
+	}
+
+
+	var id = null;
+	function myMove() {
+		var elem = document.getElementById("mainBrain");
+		var x = 0, y = 0;
+		clearInterval(id);
+		id = setInterval(frame, 60);
+		function frame() {
+			if (x > 333) {
+				clearInterval(id);
+			} else {
+				x = x + 11;
+				y = y + 0.5;
+				elem.style.top = y + 'px';
+				elem.style.left = x + 'px';
+			}
+		}
+	}
+
+
 
 	return (
-		<div className="row mainContainer">
+		<div className="row g-0">
 			<div className=" col-3 bg-secondary bg1"
 				style={(flip == false) && (menuVisible == false) ? { display: "block", } : { display: "none" }}
 			>
@@ -48,7 +99,7 @@ export const Home = () => {
 					<div className="text-white ps-2 fs-2 inPlace"
 						style={flip ? { display: "none" } : { display: "block" }}
 					>
-						<i class="fa-solid fa-brain pe-1"></i>Limbic Portal
+						<i class="fa-solid fa-brain pe-1"></i>Synaptics
 					</div>
 				</Zoom>
 			</div>
@@ -111,7 +162,7 @@ export const Home = () => {
 					<div className="text-white ps-2 fs-2 inPlace"
 						style={flip ? { display: "none" } : { display: "block" }}
 					>
-						<i class="fa-solid fa-brain pe-1"></i>Limbic Portal
+						<i class="fa-solid fa-brain pe-1"></i>Synaptics
 					</div>
 				</Zoom>
 
@@ -152,21 +203,48 @@ export const Home = () => {
 			<div className="col-9 bg-secondary text-white fs-3 ">
 				<div className="row">
 
-					<div className="col-1"></div>
+					{/* <div className="col-1"></div> */}
 
 					{/* Render the home div below  */}
 
-					<div className="col"
+					<div className="col-12 mainCol"
 						style={mainDiv == "home" ? { display: "block" } : { display: "none" }}>
-						<span className="myButton" style={{ display: "block" }}
+						{/* <span className="myButton" style={{ display: "block" }}
 							onClick={() => chooseEffect()}
-						>If you think you can</span>
-						<img src="https://cdn.pixabay.com/photo/2017/03/15/17/22/brain-2146817_1280.png"
-							className="mainBrain"
-						/>
-						<div className="mt-3 fs-5 ms-5">
-							<i class="fa-solid fa-arrow-right fa-shake fs-1"></i>
+						>If you think you can</span> */}
+
+						<div className={firstAnimation}
+							style={{ display: visible }}
+						>testing animation</div>
+
+						<div className="brainContainer" id="brainContainer">
+							<img src="https://cdn.pixabay.com/photo/2017/03/15/17/22/brain-2146817_1280.png"
+								className="moveBrain1 finalBrain" id="mainBrain"
+							/>
+							{/* <div className="testButton px-3 py-1 fs-5 text-center"
+								onClick={() => {
+									setFirstAnimation("testAnimation1");
+									setVisible("block");
+									getPositionXY(this)
+								}}
+							>Get X,Y</div> */}
+							<div className="mt-3 fs-5 ms-5 arrowBox arrow"
+								onMouseEnter={() => setArrow("")}
+								onMouseLeave={() => setArrow("fa-beat-fade")}
+								onClick={() => myMove()}
+							>
+								<i className={`fa-solid fa-arrow-right fs-1 ${arrow}`}></i>
+
+							</div>
+							<p className="type1 typedOut typedOut2 typePos1">Connecting ideas with reality</p>
+							{/* <p className="type2 typedOut typePos2">Believe it</p>
+							<p className="type3 typedOut typePos3">Create it</p> */}
+
+
 						</div>
+
+						{/* <div className="light"></div> */}
+
 					</div>
 
 					{/* Render the showcase div below  */}

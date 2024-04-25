@@ -29,7 +29,7 @@ const Layout = () => {
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
-        <div>
+        <div className="mainContainer ms-3">
             <AppContext.Provider value={
                 { menuStatus, setMenuStatus, flip, setFlip, menuVisible, setMenuVisible }
             }>

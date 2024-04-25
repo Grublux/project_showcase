@@ -9,7 +9,17 @@
 
 
 .mainContainer {
-    min-height: 669px;
+    min-height: 1111px;
+    width: 97%;
+}
+
+.mainCol {
+    min-height: 505px;
+}
+
+.myNavbar {
+    width:100%;
+    overflow: hidden;
 }
 
 .fancyGrey {
@@ -130,12 +140,207 @@
     transform:rotateX('180')
 }
 
+.brainContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: solid 1px white;
+    border-bottom-left-radius: 69%;
+  }
+
+
 .mainBrain {
     max-height: 227px;
     max-width: 227px;
     background-color: rgba(255, 255, 255, 0.45);
     border-radius: 50%;
-    top: 47px;
+    top: 0px;
     position: absolute;
-    left: 253px;
+    left: 0px;
 }
+
+.arrowBox {
+    max-height: 69px;
+    max-width: 69px;
+    border-radius: 50%;
+    top: 27%;
+    position: absolute;
+    left: 17%;
+}
+
+.arrow {
+    max-height: 69px;
+    max-width: 69px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.testButton {
+    height: 33px;
+    width: 133px;
+    position: absolute;
+    top: 111px;
+    left: 333px;
+    background-color: rgba(132, 47, 132, 0.745);
+    border-radius: 7px;
+}
+
+.testButton:hover {
+    cursor: pointer;
+}
+
+
+
+.type1 {
+    color: white;
+    top: 11%;
+    position: absolute;
+    left: 43%;
+}
+
+.type2 {
+    color: white;
+    top: 21%;
+    position: absolute;
+    left: 43%;
+}
+
+.type3 {
+    color: white;
+    top: 33%;
+    position: absolute;
+    left: 43%;
+}
+
+.typedOut{
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    width: 0;
+    animation: typing 2s steps(41, end) forwards,
+    blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    from { border-color: transparent }
+    50% {border-color: rgba(255, 166, 0, 0.89)}
+    to { border-color: transparent }
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width:29% }
+  }
+
+
+
+  .typePos1 {
+    position: absolute;
+    top: 11%;
+    left: 21%;
+  }
+
+  .typePos2 {
+    position: absolute;
+    top: 21%;
+    left: 21%;
+  }
+
+  .typePos3 {
+    position: absolute;
+    top: 33%;
+    left: 21%;
+  }
+
+
+
+.container {
+    display: inline-block;
+  }
+
+  
+
+/* .light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:  100%;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 10%, rgb(0,0,0,0.95) 20%);
+} */
+
+
+.testAnimation1 {
+    animation-duration: 5s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    33% {
+      font-size: 300%;
+      margin-left: 25%;
+      width: 150%;
+    }
+
+    69% {
+        font-size: 33%;
+        margin: left 189%;
+        width: 150%
+    }
+
+    89% {
+        font-size: 300%;
+        margin-left: 25%;
+        width: 150%;
+      }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  .finalBrain {
+    width: 55%;
+    margin-left: 45%;
+  }
+
+  .moveBrain1 {
+    animation-duration: 5s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 0%;
+      width: 20%;
+    }
+  
+    /* 33% {
+      font-size: 300%;
+      margin-left: 11%;
+      width: 30%;
+    }
+
+    69% {
+        font-size: 33%;
+        margin: left 25%;
+        width: 41%
+    } */
+
+    
+  
+    to {
+      margin-left: 45%;
+      width: 55%;
+    }
+  }
