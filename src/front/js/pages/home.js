@@ -92,18 +92,18 @@ export const Home = () => {
 
 	return (
 		<div className="row g-0">
-			<div className=" col-3 bg-secondary bg1"
+			<div className=" col-2 bg-secondary bg1"
 				style={(flip == false) && (menuVisible == false) ? { display: "block", } : { display: "none" }}
 			>
 				<Zoom>
 					<div className="text-white ps-2 fs-2 inPlace"
 						style={flip ? { display: "none" } : { display: "block" }}
 					>
-						<i class="fa-solid fa-brain pe-1"></i>Synaptics
+						<i class="fa-solid fa-brain pe-2 ps-1"></i>Synaptics
 					</div>
 				</Zoom>
 			</div>
-			<div className="col-3 bg-secondary bg1"
+			<div className="col-2 bg-secondary bg1"
 				style={flip && menuVisible ? { display: "block" } : { display: "none" }}
 			>
 				<div className={`ps-4 py-3 fancyGrey animate__animated ${menuStatus}
@@ -162,7 +162,7 @@ export const Home = () => {
 					<div className="text-white ps-2 fs-2 inPlace"
 						style={flip ? { display: "none" } : { display: "block" }}
 					>
-						<i class="fa-solid fa-brain pe-1"></i>Synaptics
+						<i class="fa-solid fa-brain pe-2 ps-1"></i>Synaptics
 					</div>
 				</Zoom>
 
@@ -200,7 +200,7 @@ export const Home = () => {
 
 			{ /* Main Div conditionally renders below  */}
 
-			<div className="col-9 bg-secondary text-white fs-3 ">
+			<div className="col-10 bg-secondary text-white fs-3 ">
 				<div className="row">
 
 					{/* <div className="col-1"></div> */}

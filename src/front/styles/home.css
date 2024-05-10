@@ -28,9 +28,10 @@
 
 .menuItem {
     color: white;
-    width: 69%;
+    width: 420%;
     overflow: hidden;
     user-select: none;
+    height: 14.33%;
 }
 
 .menuItem:hover {
@@ -42,9 +43,10 @@
 
 .menuItemHolder {
     color: white;
-    width: 69%;
+    width: 420%;
     overflow: hidden;
     user-select: none;
+    height: 14%;
 }
 
 .menuItemHolder:hover {
@@ -59,6 +61,7 @@
     background-image: linear-gradient(to right, #adb6c0 , #828A93);
     overflow: hidden;
     user-select: none;
+    height: 14.25%
 }
 
 .menuItemInactive {
@@ -146,6 +149,9 @@
     position: relative;
     border: solid 1px white;
     border-bottom-left-radius: 69%;
+    z-index: 1;
+    background-color: #6D757D;
+   
   }
 
 

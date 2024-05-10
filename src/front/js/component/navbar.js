@@ -30,22 +30,21 @@ export const Navbar = () => {
 
 	}
 
-	// const chooseVisible = () => {
-	// 	if (menuVisible == "hidden") {
-	// 		setMenuVisible("display")
-	// 	}
+	const chooseVisible = () => {
+		setMenuVisible(!menuVisible)
 
-	// }
+
+	}
 
 
 
 	return (
 		<div className="fancyGrey myNavbar">
 
-			<div className="col-1 navItem"
+			<div className="col-1 navItem ps-3 py-1"
 				onClick={() => {
 					chooseEffect();
-					setMenuVisible(true);
+					chooseVisible();
 					setFlip(!flip);
 				}}
 			>
